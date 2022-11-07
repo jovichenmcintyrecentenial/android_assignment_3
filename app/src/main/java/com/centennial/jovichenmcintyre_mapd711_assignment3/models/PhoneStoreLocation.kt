@@ -1,6 +1,7 @@
 package com.centennial.jovichenmcintyre_mapd711_assignment3.models
 
 data class PhoneStoreLocation(
+    val name:String,
     val latitude: Double,
     val longitude: Double,
     val phoneNumber:String,
@@ -8,4 +9,5 @@ data class PhoneStoreLocation(
     val openHours:String,
     val closeHours:String,
     val image:String,
+    val website:String,
 )
