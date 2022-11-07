@@ -17,12 +17,16 @@ import com.centennial.jovichenmcintyre_mapd711_assignment3.models.PhoneStoreLoca
 import com.google.gson.Gson
 import java.util.ArrayList
 
+//Name: Jovi Chen-Mcintyre
+//ID: 301125059
+
 class ListPhoneBrandsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_phone_brands)
-
+        //get list view
         val listView = findViewById<ListView>(R.id.list)
+        //get list of companies
         val listOfCompanies = getBrandList()
         //create instance of a custom listAdpator called PhoneListAdaptor
         var listAdaptor = BrandListAdaptor(this, listOfCompanies)
@@ -41,7 +45,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
     }
 
 
-    //function to get a list of phone  based on company names
+    //function to load data
     private fun getBrandList():List<Company>{
         var list = ArrayList<Company>()
         list.add(Company("Apple", Brand.APPLE,"apple_pin", "Locate Apple Phones"))
@@ -194,7 +198,7 @@ class BrandListAdaptor(context: Activity, list:List<Company>):  BaseAdapter(){
             inflate(R.layout.brand_list_item, parent, false)
         }
 
-//        //find views
+        //find views
         val imageView = inflatedView?.findViewById<ImageView>(R.id.pin_image)
         val descriptionTextView = inflatedView?.findViewById<TextView>(R.id.description)
 
