@@ -2,7 +2,7 @@
     <string name="app_name">Store Locator</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="select_the_company_in_which_you_want_to_find_a_store_that_sells_these_brand_handset">Select the company in which you want to find a store that sells these brand handset.</string>
-    <string name="choose_a_company">Choose a company</string>
+    <string name="choose_a_company">Choose a brand</string>
     <string name="_20_glenheater_terrace_on_ca">20 Glenheater Terrace, ON, CA</string>
     <string name="_1_876_598_0402">+1 (876) 598 0402</string>
     <string name="_12_00_am_5_00_pm">12:00 am - 5:00 pm</string>
