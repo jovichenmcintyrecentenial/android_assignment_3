@@ -48,11 +48,11 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
     //function to load data
     private fun getBrandList():List<Company>{
         var list = ArrayList<Company>()
-        list.add(Company("Apple", Brand.APPLE,"apple_pin", "Locate Apple Phones"))
+        list.add(Company(getString(R.string.apple), Brand.APPLE,"apple_pin", getString(R.string.l_apple_phones)))
         var tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
-                "Jump+",
+                getString(R.string.jump),
                 43.7755398,
                 -79.260746,
                 "+1 (647) 417-1434",
@@ -65,7 +65,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
         )
         tempCompany.locations.add(
             PhoneStoreLocation(
-                "Jump+",
+                getString(R.string.jump),
                 43.726844,
                 -79.5624598,
                 "+1 (289) 459-1887",
@@ -78,7 +78,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
         )
         tempCompany.locations.add(
             PhoneStoreLocation(
-                "Best Buy",
+                getString(R.string.best_buy),
                 43.773719,
                 -79.3990286,
                 "+1 (866) 237-8289",
@@ -89,11 +89,11 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "https://stores.bestbuy.ca"
             ),
         )
-        list.add(Company("Google", Brand.GOOGLE ,"google_pin","Locate Google Phones"))
+        list.add(Company(getString(R.string.google), Brand.GOOGLE ,"google_pin",getString(R.string.l_google_phones)))
         tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
-                "Best Buy",
+                getString(R.string.best_buy),
                 43.773719,
                 -79.3990286,
                 "+1 (866) 237-8289",
@@ -106,7 +106,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
         )
         tempCompany.locations.add(
             PhoneStoreLocation(
-                "Best Buy",
+                getString(R.string.best_buy),
                 43.8692615,
                 -79.291075,
                 "+1 (866) 237-8289",
@@ -117,11 +117,11 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "https://stores.bestbuy.ca"
             ),
         )
-        list.add(Company("Samsung", Brand.SAMSUNG, "samsung_pin","Locate Samsung Phones" ))
+        list.add(Company("Samsung", Brand.SAMSUNG, "samsung_pin",getString(R.string.l_samsung_phones) ))
         tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
-                "Samsung Experience Store",
+                getString(R.string.samsung_xp_store),
                 43.7752514,
                 -79.3277146,
                 "+1 (416) 775-3527",
@@ -134,7 +134,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
         )
         tempCompany.locations.add(
             PhoneStoreLocation(
-                "Samsung Experience Store",
+                getString(R.string.samsung_xp_store),
                 43.7305344,
                 -79.4627086,
                 "+1 (416) 775-3527",
@@ -145,11 +145,11 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "http://www.samsung.com/ca/ses"
             ),
         )
-        list.add(Company("Oppo", Brand.OPPO,"oppo_pin", "Locate Oppo Phones" ))
+        list.add(Company("Oppo", Brand.OPPO,"oppo_pin", getString(R.string.l_oppo_phones) ))
         tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
-                "Best Buy",
+                getString(R.string.best_buy),
                 43.773719,
                 -79.3990286,
                 "+1 (866) 237-8289",

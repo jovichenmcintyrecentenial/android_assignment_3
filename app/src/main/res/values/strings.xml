@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">Store Locator</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="select_the_company_in_which_you_want_to_find_a_store_that_sells_these_brand_handset">Select the company in which you want to find a store that sells these brand handset.</string>
+    <string name="choose_a_company">Choose a company</string>
+    <string name="_20_glenheater_terrace_on_ca">20 Glenheater Terrace, ON, CA</string>
+    <string name="_1_876_598_0402">+1 (876) 598 0402</string>
+    <string name="_12_00_am_5_00_pm">12:00 am - 5:00 pm</string>
+    <string name="www_bestbuy_ca">www.bestbuy.ca</string>
+    <string name="best_buy">Best Buy</string>
+    <string name="l_apple_phones">Locate Apple Phones</string>
+    <string name="apple">Apple</string>
+    <string name="l_google_phones">Locate Google Phones</string>
+    <string name="google">Google</string>
+    <string name="jump">Jump+</string>
+    <string name="l_samsung_phones">Locate Samsung Phones</string>
+    <string name="l_oppo_phones">Locate Oppo Phones</string>
+    <string name="samsung_xp_store">Samsung Experience Store</string>
 </resources>
