@@ -1,6 +1,7 @@
 package com.centennial.jovichenmcintyre_mapd711_assignment3
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -19,6 +20,8 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.text.TextUtils
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.ListView
@@ -44,6 +47,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        //load menu
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //create new intent to ListOfPhonesActivity
+
+        when(item.itemId) {
+            R.id.hybrid -> mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
+            R.id.normal -> mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+            R.id.satellite -> mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
+            R.id.terrain -> mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
