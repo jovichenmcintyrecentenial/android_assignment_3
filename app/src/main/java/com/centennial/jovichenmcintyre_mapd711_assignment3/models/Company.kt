@@ -10,6 +10,7 @@ class Company(
      val name: String,
      val brand: Brand,
      val pin_icon: String,
+     val listDescription:String
 ) {
 
     var locations = ArrayList<PhoneStoreLocation>()

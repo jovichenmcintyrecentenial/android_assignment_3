@@ -1,6 +1,7 @@
 package com.centennial.jovichenmcintyre_mapd711_assignment3
 
 import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +10,11 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.ListView
+import android.widget.TextView
 import com.centennial.jovichenmcintyre_mapd711_assignment3.enumerator.Brand
 import com.centennial.jovichenmcintyre_mapd711_assignment3.models.Company
 import com.centennial.jovichenmcintyre_mapd711_assignment3.models.PhoneStoreLocation
+import com.google.gson.Gson
 import java.util.ArrayList
 
 class ListPhoneBrandsActivity : AppCompatActivity() {
@@ -20,17 +23,17 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_list_phone_brands)
 
         val listView = findViewById<ListView>(R.id.list)
-
+        val listOfCompanies = getBrandList()
         //create instance of a custom listAdpator called PhoneListAdaptor
-        var listAdaptor = BrandListAdaptor(this, getBrandList())
+        var listAdaptor = BrandListAdaptor(this, listOfCompanies)
 
         //create a listener for on click aciton on list view
-        listView.setOnItemClickListener { parent, view, position, id ->
-//            var newIntent = Intent(this,PhoneOptionsSelectActivity::class.java)
-//            //update create PhoneCheckOut and serialize data and pass to intent
-//            newIntent.putExtra("checkout", Gson().toJson(PhoneCheckOut(listOfPhones[position])))
-//            //load new Intent
-//            startActivity(newIntent)
+        listView.setOnItemClickListener { _, _, position, _ ->
+            var newIntent = Intent(this,MapsActivity::class.java)
+            //update create PhoneCheckOut and serialize data and pass to intent
+            newIntent.putExtra("company", Gson().toJson(listOfCompanies[position]))
+            //load new Intent
+            startActivity(newIntent)
         }
 
         //attact adaptor to listview
@@ -41,7 +44,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
     //function to get a list of phone  based on company names
     private fun getBrandList():List<Company>{
         var list = ArrayList<Company>()
-        list.add(Company("Apple", Brand.APPLE,"apple_pin"))
+        list.add(Company("Apple", Brand.APPLE,"apple_pin", "Locate Apple Phones"))
         var tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
@@ -82,7 +85,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "https://stores.bestbuy.ca/en-ca/on/scarborough/480-progress-ave"
             ),
         )
-        list.add(Company("Google", Brand.GOOGLE ,"google_pin"))
+        list.add(Company("Google", Brand.GOOGLE ,"google_pin","Locate Google Phones"))
         tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
@@ -110,7 +113,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "https://stores.bestbuy.ca/en-ca/on/scarborough/480-progress-ave"
             ),
         )
-        list.add(Company("Samsung", Brand.SAMSUNG, "samsung_pin" ))
+        list.add(Company("Samsung", Brand.SAMSUNG, "samsung_pin","Locate Samsung Phones" ))
         tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
@@ -138,7 +141,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "http://www.samsung.com/ca/ses/"
             ),
         )
-        list.add(Company("Oppo", Brand.OPPO,"oppo_pin" ))
+        list.add(Company("Oppo", Brand.OPPO,"oppo_pin", "Locate Oppo Phones" ))
         tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
@@ -192,18 +195,15 @@ class BrandListAdaptor(context: Activity, list:List<Company>):  BaseAdapter(){
         }
 
 //        //find views
-//        val priceTextView = inflatedView?.findViewById<TextView>(R.id.phone_price)
-        val phoneImage = inflatedView?.findViewById<ImageView>(R.id.pin_image)
-//        val phoneNameTextView = inflatedView?.findViewById<TextView>(R.id.phone_name)
-//
-//        //dynamically load phone images using phone uri
+        val imageView = inflatedView?.findViewById<ImageView>(R.id.pin_image)
+        val descriptionTextView = inflatedView?.findViewById<TextView>(R.id.description)
+
+        descriptionTextView!!.text = company.listDescription
+
+        //dynamically load phone images using phone uri
         val resourceImage: Int = context.resources.getIdentifier(company.pin_icon, "drawable", context.packageName)
-        phoneImage?.setImageResource(resourceImage)
-//
-//        //update phone name in list
-//        phoneNameTextView?.text = phone.name
-//        //update price on list time
-//        priceTextView?.text = phone.getFormatterPrice().toString()
+        imageView?.setImageResource(resourceImage)
+
         return inflatedView!!
     }
 
