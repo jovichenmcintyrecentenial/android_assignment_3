@@ -1,5 +1,6 @@
 package com.centennial.jovichenmcintyre_mapd711_assignment3
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -16,8 +17,11 @@ import com.google.gson.Gson
 import android.graphics.Bitmap
 
 import android.graphics.BitmapFactory
-
-
+import android.text.TextUtils
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.TextView
+import com.google.android.gms.maps.model.Marker
 
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -42,13 +46,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+        mMap.setInfoWindowAdapter(MyInfoWindowAdapter(this,company))
 //        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        for(location in company.locations) {
+        for((index, location) in company.locations.withIndex()) {
             mMap.addMarker(
                 MarkerOptions()
                     .position(LatLng(location.latitude, location.longitude))
                     .title(location.name)
-                    .snippet("Population: 4,137,400")
+                    .snippet(index.toString())
                     .icon(
                         BitmapDescriptorFactory.fromBitmap(
                             resizeMapIcons(
@@ -74,5 +79,28 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             )
         )
         return Bitmap.createScaledBitmap(imageBitmap, width, height, false)
+    }
+}
+
+
+class MyInfoWindowAdapter(mContext: Context, private val company:Company) : GoogleMap.InfoWindowAdapter {
+    var mWindow: View = LayoutInflater.from(mContext).inflate(R.layout.map_window_info, null)
+
+
+    override fun getInfoWindow(marker: Marker): View {
+        var index = marker.snippet.toString().toIntOrNull()
+        if(index != null){
+            var storeLocation = company.locations[index];
+            var x = 1
+            var x2 = 1+x
+
+        }
+
+
+        return mWindow
+    }
+
+    override fun getInfoContents(marker: Marker): View {
+        return mWindow
     }
 }
