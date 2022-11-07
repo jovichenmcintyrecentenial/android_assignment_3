@@ -9,6 +9,7 @@ import java.util.ArrayList
 class Company(
      val name: String,
      val brand: Brand,
+     val pin_icon: String,
 ) {
 
     var locations = ArrayList<PhoneStoreLocation>()

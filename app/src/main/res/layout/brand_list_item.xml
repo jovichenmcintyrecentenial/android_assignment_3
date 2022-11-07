@@ -7,15 +7,13 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:weightSum="1"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
     android:layout_height="80dp">
 
     <ImageView
-        android:id="@+id/phone_image"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginRight="20dp"
+        android:id="@+id/pin_image"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="10dp"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
@@ -24,13 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
+        android:textAlignment="center"
         android:textSize="17sp"
-        android:text="Samsung Galaxy S22 Ultra 5G" />
-    <TextView
-        android:id="@+id/phone_price"
-        android:textColor="#77C37B"
-        android:layout_width="wrap_content"
-        android:textSize="17sp"
-        android:layout_height="wrap_content"
-        android:text="$152.25" />
+        android:text="Locate Apple Phones" />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="18dp"
+        app:srcCompat="@drawable/chevron" />
+
 </LinearLayout>

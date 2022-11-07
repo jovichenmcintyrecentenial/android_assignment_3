@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.ListView
 import com.centennial.jovichenmcintyre_mapd711_assignment3.enumerator.Brand
 import com.centennial.jovichenmcintyre_mapd711_assignment3.models.Company
@@ -40,7 +41,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
     //function to get a list of phone  based on company names
     private fun getBrandList():List<Company>{
         var list = ArrayList<Company>()
-        list.add(Company("Apple", Brand.APPLE))
+        list.add(Company("Apple", Brand.APPLE,"apple_pin"))
         var tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
@@ -81,7 +82,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "https://stores.bestbuy.ca/en-ca/on/scarborough/480-progress-ave"
             ),
         )
-        list.add(Company("Google", Brand.GOOGLE ))
+        list.add(Company("Google", Brand.GOOGLE ,"google_pin"))
         tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
@@ -109,7 +110,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "https://stores.bestbuy.ca/en-ca/on/scarborough/480-progress-ave"
             ),
         )
-        list.add(Company("Samsung", Brand.SAMSUNG ))
+        list.add(Company("Samsung", Brand.SAMSUNG, "samsung_pin" ))
         tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
@@ -137,7 +138,7 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "http://www.samsung.com/ca/ses/"
             ),
         )
-        list.add(Company("Oppo", Brand.OPPO ))
+        list.add(Company("Oppo", Brand.OPPO,"oppo_pin" ))
         tempCompany = list[list.count()-1]
         tempCompany.locations.add(
             PhoneStoreLocation(
@@ -181,7 +182,7 @@ class BrandListAdaptor(context: Activity, list:List<Company>):  BaseAdapter(){
 
         var inflatedView: View? = convertView
         //load data at position
-        val phone = list[position]
+        val company = list[position]
 
 
         if(inflatedView == null){
@@ -192,12 +193,12 @@ class BrandListAdaptor(context: Activity, list:List<Company>):  BaseAdapter(){
 
 //        //find views
 //        val priceTextView = inflatedView?.findViewById<TextView>(R.id.phone_price)
-//        val phoneImage = inflatedView?.findViewById<ImageView>(R.id.phone_image)
+        val phoneImage = inflatedView?.findViewById<ImageView>(R.id.pin_image)
 //        val phoneNameTextView = inflatedView?.findViewById<TextView>(R.id.phone_name)
 //
 //        //dynamically load phone images using phone uri
-//        val resourceImage: Int = context.resources.getIdentifier(phone.uri, "drawable", context.packageName)
-//        phoneImage?.setImageResource(resourceImage)
+        val resourceImage: Int = context.resources.getIdentifier(company.pin_icon, "drawable", context.packageName)
+        phoneImage?.setImageResource(resourceImage)
 //
 //        //update phone name in list
 //        phoneNameTextView?.text = phone.name
