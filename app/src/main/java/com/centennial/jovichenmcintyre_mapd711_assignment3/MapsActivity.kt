@@ -20,6 +20,8 @@ import android.graphics.BitmapFactory
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
 import com.google.android.gms.maps.model.Marker
 
@@ -83,16 +85,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 }
 
 
-class MyInfoWindowAdapter(mContext: Context, private val company:Company) : GoogleMap.InfoWindowAdapter {
-    var mWindow: View = LayoutInflater.from(mContext).inflate(R.layout.map_window_info, null)
-
+class MyInfoWindowAdapter(context: Context, private val company:Company) : GoogleMap.InfoWindowAdapter {
+    var mWindow: View = LayoutInflater.from(context).inflate(R.layout.map_window_info, null)
+    val contex = context
 
     override fun getInfoWindow(marker: Marker): View {
         var index = marker.snippet.toString().toIntOrNull()
         if(index != null){
             var storeLocation = company.locations[index];
-            var x = 1
-            var x2 = 1+x
+
+            val companyNameTextView = mWindow.findViewById<TextView>(R.id.company_name)
+            val companyImageView = mWindow.findViewById<ImageView>(R.id.company_image)
+            val addressTextView = mWindow.findViewById<TextView>(R.id.address)
+            val phoneTextView = mWindow.findViewById<TextView>(R.id.phone)
+            val openingTextView = mWindow.findViewById<TextView>(R.id.opening)
+            val websiteTextView = mWindow.findViewById<TextView>(R.id.website)
+
+            companyNameTextView.text = storeLocation.name
+            addressTextView.text = storeLocation.address
+            phoneTextView.text = storeLocation.phoneNumber
+            openingTextView.text = storeLocation.openHours +  " - " + storeLocation.closeHours
+            websiteTextView.text = storeLocation.website
+
+            val resourceImage: Int = contex.resources.getIdentifier(storeLocation.image, "drawable", contex.packageName)
+            companyImageView?.setImageResource(resourceImage)
+
+
 
         }
 

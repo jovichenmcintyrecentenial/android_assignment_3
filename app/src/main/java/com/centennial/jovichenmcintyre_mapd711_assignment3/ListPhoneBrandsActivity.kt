@@ -55,8 +55,8 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "300 Borough Dr, Scarborough, ON M1P 4P5",
                 "10:00 am",
                 "5:00 pm",
-                "ic_launcher",
-                "http://jumpplus.com/"
+                "jump",
+                "http://jumpplus.com"
             )
         )
         tempCompany.locations.add(
@@ -68,8 +68,8 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "1 Bass Pro Mills Dr, Concord, ON L4K 5W4",
                 "10:00 am",
                 "5:00 pm",
-                "ic_launcher",
-                "http://jumpplus.com/"
+                "jump",
+                "http://jumpplus.com"
             ),
         )
         tempCompany.locations.add(
@@ -81,8 +81,8 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "480 Progress Ave, Scarborough, ON M1P 5J1",
                 "10:00 am",
                 "5:00 pm",
-                "ic_launcher",
-                "https://stores.bestbuy.ca/en-ca/on/scarborough/480-progress-ave"
+                "bestbuy",
+                "https://stores.bestbuy.ca"
             ),
         )
         list.add(Company("Google", Brand.GOOGLE ,"google_pin","Locate Google Phones"))
@@ -96,8 +96,8 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "480 Progress Ave, Scarborough, ON M1P 5J1",
                 "10:00 am",
                 "5:00 pm",
-                "ic_launcher",
-                "https://stores.bestbuy.ca/en-ca/on/scarborough/480-progress-ave"
+                "bestbuy",
+                "https://stores.bestbuy.ca"
             ),
         )
         tempCompany.locations.add(
@@ -109,8 +109,8 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "5000 Hwy 7 Unit 2070L, Markham, ON L3R 4M9",
                 "10:00 am",
                 "5:00 pm",
-                "ic_launcher",
-                "https://stores.bestbuy.ca/en-ca/on/scarborough/480-progress-ave"
+                "bestbuy",
+                "https://stores.bestbuy.ca"
             ),
         )
         list.add(Company("Samsung", Brand.SAMSUNG, "samsung_pin","Locate Samsung Phones" ))
@@ -124,8 +124,8 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "3401 Dufferin St Unit 508, North York, ON M6A 2T9",
                 "10:00 am",
                 "5:00 pm",
-                "ic_launcher",
-                "http://www.samsung.com/ca/ses/"
+                "samsung",
+                "http://www.samsung.com/ca/ses"
             ),
         )
         tempCompany.locations.add(
@@ -137,8 +137,8 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "220 Yonge St, Toronto, ON M5B 2H1",
                 "10:00 am",
                 "5:00 pm",
-                "ic_launcher",
-                "http://www.samsung.com/ca/ses/"
+                "samsung",
+                "http://www.samsung.com/ca/ses"
             ),
         )
         list.add(Company("Oppo", Brand.OPPO,"oppo_pin", "Locate Oppo Phones" ))
@@ -152,8 +152,8 @@ class ListPhoneBrandsActivity : AppCompatActivity() {
                 "480 Progress Ave, Scarborough, ON M1P 5J1",
                 "10:00 am",
                 "5:00 pm",
-                "ic_launcher",
-                "https://stores.bestbuy.ca/en-ca/on/scarborough/480-progress-ave"
+                "bestbuy",
+                "https://stores.bestbuy.ca"
             ),
         )
 
